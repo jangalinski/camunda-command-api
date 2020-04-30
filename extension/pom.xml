@@ -14,9 +14,15 @@
 
   <modules>
     <module>api</module>
+    <module>handler</module>
   </modules>
 
   <dependencies>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine</artifactId>
+      <scope>provided</scope>
+    </dependency>
 
     <!-- Testing
     <dependency>

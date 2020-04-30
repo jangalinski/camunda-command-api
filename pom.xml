@@ -35,12 +35,25 @@
   </properties>
 
   <modules>
-    <!-- module>lib/test</module -->
+    <module>lib/test</module>
     <module>extension</module>
   </modules>
 
   <dependencyManagement>
     <dependencies>
+      <!-- PROJECT -->
+      <dependency>
+        <groupId>io.holunda.command</groupId>
+        <artifactId>camunda-command-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.lib</groupId>
+        <artifactId>camunda-command-lib-test</artifactId>
+        <version>${project.version}</version>
+        <scope>test</scope>
+      </dependency>
 
       <!-- CAMUNDA -->
       <dependency>
@@ -57,13 +70,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!--dependency>
-        <groupId>org.camunda.spin</groupId>
-        <artifactId>camunda-spin-bom</artifactId>
-        <version>${spin.version}</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency-->
 
       <!-- SPRING -->
       <dependency>
