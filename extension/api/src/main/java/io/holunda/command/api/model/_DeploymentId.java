@@ -6,6 +6,6 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @Wrapped
-abstract class _CaseInstanceId extends StringWrapper {
+abstract class _DeploymentId extends StringWrapper {
   // empty, generator template
 }

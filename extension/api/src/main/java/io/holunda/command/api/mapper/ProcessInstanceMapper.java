@@ -1,16 +1,15 @@
 package io.holunda.command.api.mapper;
 
-import io.holunda.command.api.camunda.ImmutableProcessInstance;
 import io.holunda.command.api.dto.ProcessInstanceDto;
 import io.holunda.command.api.model.BusinessKey;
 import io.holunda.command.api.model.CaseInstanceId;
 import io.holunda.command.api.model.ProcessDefinitionId;
 import io.holunda.command.api.model.ProcessInstanceId;
 import io.holunda.command.api.model.TenantId;
+import io.holunda.commons.immutables.ImmutableProcessInstance;
 import java.util.Optional;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.runtime.ProcessInstanceWithVariables;
-import org.camunda.bpm.engine.runtime.ProcessInstantiationBuilder;
 import org.camunda.bpm.engine.variable.Variables;
 
 public enum ProcessInstanceMapper {

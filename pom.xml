@@ -20,7 +20,9 @@
     <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
     <camunda-spring-boot.version>3.4.2</camunda-spring-boot.version>
     <jgiven.version>0.18.2</jgiven.version>
+    <jetbrains-annotations.version>16.0.1</jetbrains-annotations.version>
     <camunda-bpm-data.version>0.0.6</camunda-bpm-data.version>
+    <camunda-commons-immutables.version>0.0.1-SNAPSHOT</camunda-commons-immutables.version>
 
     <pattern.class.itest>**/*ITest.*</pattern.class.itest>
     <pattern.package.itest>**/itest/**/*.*</pattern.package.itest>
@@ -49,6 +51,12 @@
       </dependency>
 
       <dependency>
+        <groupId>io.holunda.commons</groupId>
+        <artifactId>camunda-commons-immutables</artifactId>
+        <version>${camunda-commons-immutables.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>io.holunda.command.lib</groupId>
         <artifactId>camunda-command-lib-test</artifactId>
         <version>${project.version}</version>
@@ -71,6 +79,13 @@
         <scope>import</scope>
       </dependency>
 
+      <!-- LANG -->
+      <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>annotations</artifactId>
+        <version>${jetbrains-annotations.version}</version>
+      </dependency>
+
       <!-- SPRING -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -81,6 +96,14 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <defaultGoal>clean jacoco:prepare-agent package</defaultGoal>
