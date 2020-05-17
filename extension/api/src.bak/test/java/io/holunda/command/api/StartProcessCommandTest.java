@@ -3,9 +3,9 @@ package io.holunda.command.api;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import io.holunda.command.api.model.MessageName;
-import io.holunda.command.api.model.ProcessDefinitionId;
-import io.holunda.command.api.model.ProcessDefinitionKey;
+import io.holunda.command.api.value.MessageName;
+import io.holunda.command.api.value.ProcessDefinitionId;
+import io.holunda.command.api.value.ProcessDefinitionKey;
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
 @RunWith(Enclosed.class)
 public class StartProcessCommandTest {
 
-  private static final ProcessDefinitionKey PROCESS_DEFINITION_KEY = ProcessDefinitionKey.of(UUID.randomUUID().toString());
-  private static final ProcessDefinitionId PROCESS_DEFINITION_ID = ProcessDefinitionId.of(UUID.randomUUID().toString());
-  private static final MessageName MESSAGE_NAME = MessageName.of("message");
+  private static final ProcessDefinitionKey PROCESS_DEFINITION_KEY = null; // FIXME;
+  private static final ProcessDefinitionId PROCESS_DEFINITION_ID = null; // FIXME
+  private static final MessageName MESSAGE_NAME = null; //MessageName.of("message");
 
 
   public static class StartProcessByKeyTest {

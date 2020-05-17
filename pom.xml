@@ -23,6 +23,7 @@
     <jetbrains-annotations.version>16.0.1</jetbrains-annotations.version>
     <camunda-bpm-data.version>0.0.6</camunda-bpm-data.version>
     <camunda-commons-immutables.version>0.0.1-SNAPSHOT</camunda-commons-immutables.version>
+    <jackson.version>2.10.3</jackson.version>
 
     <pattern.class.itest>**/*ITest.*</pattern.class.itest>
     <pattern.package.itest>**/itest/**/*.*</pattern.package.itest>

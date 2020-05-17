@@ -1,12 +1,14 @@
 package io.holunda.command.api;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.holunda.command.api.CamundaCommandApi.CamundaCommand;
-import io.holunda.command.api.model.BusinessKey;
-import io.holunda.command.api.model.CaseInstanceId;
-import io.holunda.command.api.model.Immutables.ImmutableObject;
-import io.holunda.command.api.model.MessageName;
-import io.holunda.command.api.model.ProcessDefinitionId;
-import io.holunda.command.api.model.ProcessDefinitionKey;
+import io.holunda.command.api.value.BusinessKey;
+import io.holunda.command.api.value.CaseInstanceId;
+import io.holunda.command.api.CamundaCommandApi.Immutables.ImmutableObject;
+import io.holunda.command.api.value.MessageName;
+import io.holunda.command.api.value.ProcessDefinitionId;
+import io.holunda.command.api.value.ProcessDefinitionKey;
 import java.util.Optional;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
@@ -37,6 +39,8 @@ public interface StartProcessCommand extends CamundaCommand {
   }
 
   @Value.Immutable
+  @JsonSerialize(as = StartProcessByKeyCommand.class)
+  @JsonDeserialize(as = StartProcessByKeyCommand.class)
   @ImmutableObject
   interface _StartProcessByKeyCommand extends StartProcessCommand {
 
@@ -47,6 +51,8 @@ public interface StartProcessCommand extends CamundaCommand {
   }
 
   @Value.Immutable
+  @JsonSerialize(as = StartProcessByIdCommand.class)
+  @JsonDeserialize(as = StartProcessByIdCommand.class)
   @ImmutableObject
   interface _StartProcessByIdCommand extends StartProcessCommand {
 
@@ -58,6 +64,8 @@ public interface StartProcessCommand extends CamundaCommand {
   }
 
   @Value.Immutable
+  @JsonSerialize(as = StartProcessByMessageCommand.class)
+  @JsonDeserialize(as = StartProcessByMessageCommand.class)
   @ImmutableObject
   interface _StartProcessByMessageCommand extends StartProcessCommand {
 
@@ -69,6 +77,8 @@ public interface StartProcessCommand extends CamundaCommand {
   }
 
   @Value.Immutable
+  @JsonSerialize(as = StartProcessByMessageAndIdCommand.class)
+  @JsonDeserialize(as = StartProcessByMessageAndIdCommand.class)
   @ImmutableObject
   interface _StartProcessByMessageAndIdCommand extends StartProcessCommand {
 

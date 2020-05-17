@@ -1,11 +1,14 @@
 package io.holunda.command.api.mapper;
 
+import static io.holunda.command.api.CamundaCommandApi.processDefinitionId;
+import static io.holunda.command.api.CamundaCommandApi.processInstanceId;
+
+import io.holunda.command.api.CamundaCommandApi;
 import io.holunda.command.api.dto.ProcessInstanceDto;
-import io.holunda.command.api.model.BusinessKey;
-import io.holunda.command.api.model.CaseInstanceId;
-import io.holunda.command.api.model.ProcessDefinitionId;
-import io.holunda.command.api.model.ProcessInstanceId;
-import io.holunda.command.api.model.TenantId;
+import io.holunda.command.api.value.BusinessKey;
+import io.holunda.command.api.value.CaseInstanceId;
+import io.holunda.command.api.value.ProcessInstanceId;
+import io.holunda.command.api.value.TenantId;
 import io.holunda.commons.immutables.ImmutableProcessInstance;
 import java.util.Optional;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
@@ -29,29 +32,29 @@ public enum ProcessInstanceMapper {
 
   public static ProcessInstanceWithVariables processInstance(final ProcessInstanceDto dto) {
     return ImmutableProcessInstance.builder()
-      .id(dto.getId().value())
-      .processDefinitionId(dto.getProcessDefinitionId().value())
-      .businessKey(Optional.ofNullable(dto.getBusinessKey()).map(BusinessKey::value).orElse(null))
-      .rootProcessInstanceId(dto.getRootProcessInstanceId().value())
-      .caseInstanceId(Optional.ofNullable(dto.getCaseInstanceId()).map(CaseInstanceId::value).orElse(null))
+      .id(dto.getId().getValue())
+      .processDefinitionId(dto.getProcessDefinitionId().getValue())
+      .businessKey(dto.getBusinessKey().map(BusinessKey::getValue).orElse(null))
+      .rootProcessInstanceId(dto.getRootProcessInstanceId().getValue())
+      .caseInstanceId(dto.getCaseInstanceId().map(CaseInstanceId::getValue).orElse(null))
       .isSuspended(dto.isSuspended())
       .isEnded(dto.isEnded())
-      .processInstanceId(dto.getProcessInstanceId().value())
-      .tenantId(Optional.ofNullable(dto.getTenantId()).map(TenantId::value).orElse(null))
+      .processInstanceId(dto.getProcessInstanceId().getValue())
+      .tenantId(dto.getTenantId().map(TenantId::getValue).orElse(null))
       .variables(Optional.ofNullable(dto.getVariables()).orElse(Variables.createVariables()))
       .build();
   }
 
   private static ProcessInstanceDto.Builder processInstanceDtoBuilder(ProcessInstance processInstance) {
     return ProcessInstanceDto.builder()
-      .id(ProcessInstanceId.of(processInstance.getId()))
-      .processDefinitionId(ProcessDefinitionId.of(processInstance.getId()))
-      .businessKey(Optional.ofNullable(processInstance.getBusinessKey()).map(BusinessKey::of).orElse(null))
-      .rootProcessInstanceId(ProcessInstanceId.of(processInstance.getId()))
-      .caseInstanceId(Optional.ofNullable(processInstance.getCaseInstanceId()).map(CaseInstanceId::of).orElse(null))
+      .id(processInstanceId(processInstance.getId()))
+      .processDefinitionId(processDefinitionId(processInstance.getId()))
+      .businessKey(Optional.ofNullable(processInstance.getBusinessKey()).map(CamundaCommandApi::businessKey))
+      .rootProcessInstanceId(processInstanceId(processInstance.getId()))
+      .caseInstanceId(Optional.ofNullable(processInstance.getCaseInstanceId()).map(CamundaCommandApi::caseInstanceId))
       .isSuspended(processInstance.isSuspended())
       .isEnded(processInstance.isEnded())
-      .processInstanceId(ProcessInstanceId.of(processInstance.getProcessInstanceId()))
-      .tenantId(Optional.ofNullable(processInstance.getTenantId()).map(TenantId::of).orElse(null));
+      .processInstanceId(processInstanceId(processInstance.getProcessInstanceId()))
+      .tenantId(Optional.ofNullable(processInstance.getTenantId()).map(CamundaCommandApi::tenantId));
   }
 }

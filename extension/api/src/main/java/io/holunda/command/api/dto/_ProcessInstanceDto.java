@@ -1,18 +1,20 @@
 package io.holunda.command.api.dto;
 
+import io.holunda.command.api.CamundaCommandApi.Immutables.ImmutableObject;
 import io.holunda.command.api.mapper.ProcessInstanceMapper;
-import io.holunda.command.api.model.BusinessKey;
-import io.holunda.command.api.model.CaseInstanceId;
-import io.holunda.command.api.model.Immutables.ImmutableObject;
-import io.holunda.command.api.model.ProcessDefinitionId;
-import io.holunda.command.api.model.ProcessInstanceId;
-import io.holunda.command.api.model.TenantId;
+import io.holunda.command.api.value.BusinessKey;
+import io.holunda.command.api.value.CaseInstanceId;
+import io.holunda.command.api.value.ProcessDefinitionId;
+import io.holunda.command.api.value.ProcessInstanceId;
+import io.holunda.command.api.value.TenantId;
+import java.util.Optional;
 import java.util.function.Supplier;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.runtime.ProcessInstanceWithVariables;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
 import org.immutables.value.Value;
+import org.immutables.value.Value.Default;
 import org.jetbrains.annotations.Nullable;
 
 @Value.Immutable
@@ -21,24 +23,30 @@ interface _ProcessInstanceDto extends Supplier<ProcessInstance> {
 
   ProcessInstanceId getId();
 
+  @Default
+  default ProcessInstanceId getProcessInstanceId() {
+    return getId();
+  }
+
   ProcessDefinitionId getProcessDefinitionId();
 
-  @Nullable
-  BusinessKey getBusinessKey();
+  Optional<BusinessKey> getBusinessKey();
 
   ProcessInstanceId getRootProcessInstanceId();
 
-  @Nullable
-  CaseInstanceId getCaseInstanceId();
+  Optional<CaseInstanceId> getCaseInstanceId();
 
-  boolean isSuspended();
+  @Default
+  default boolean isSuspended() {
+    return false;
+  }
 
-  boolean isEnded();
+  @Default
+  default boolean isEnded() {
+    return false;
+  }
 
-  ProcessInstanceId getProcessInstanceId();
-
-  @Nullable
-  TenantId getTenantId();
+  Optional<TenantId> getTenantId();
 
   @Value.Default
   default VariableMap getVariables() {
@@ -49,6 +57,4 @@ interface _ProcessInstanceDto extends Supplier<ProcessInstance> {
   default ProcessInstanceWithVariables get() {
     return ProcessInstanceMapper.processInstance(ProcessInstanceDto.copyOf(this));
   }
-
-
 }

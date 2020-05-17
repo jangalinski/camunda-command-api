@@ -1,17 +1,20 @@
 package io.holunda.command.handler;
 
+import static io.holunda.command.api.CamundaCommandApi.businessKey;
+import static io.holunda.command.api.CamundaCommandApi.processDefinitionKey;
+
 import io.holunda.command.api.StartProcessByKeyCommand;
 import io.holunda.command.api.dto.ProcessInstanceDto;
-import io.holunda.command.api.model.BusinessKey;
-import io.holunda.command.api.model.ProcessDefinitionKey;
+import io.holunda.command.api.value.BusinessKey;
+import io.holunda.command.api.value.ProcessDefinitionKey;
 import io.holunda.command.handler.StartProcessByKeyHandlerTest.DummyProcess.VARIABLES;
 import io.holunda.command.test.TestProcessEngine;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import org.assertj.core.api.Assertions;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.runtime.ProcessInstanceWithVariables;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests;
@@ -25,7 +28,7 @@ import org.junit.Test;
 
 public class StartProcessByKeyHandlerTest {
 
-  private static final ProcessDefinitionKey KEY = ProcessDefinitionKey.of("dummy");
+  private static final ProcessDefinitionKey KEY = processDefinitionKey("dummy");
 
   @Rule
   public final ProcessEngineRule camunda = TestProcessEngine.processEngineRule();
@@ -61,7 +64,7 @@ public class StartProcessByKeyHandlerTest {
 
   @Test
   public void startByKey_with_businessKey() {
-    BusinessKey businessKey = BusinessKey.random();
+    BusinessKey businessKey = businessKey(UUID.randomUUID().toString());
     StartProcessByKeyCommand cmd = StartProcessByKeyCommand.builder()
       .processDefinitionKey(KEY)
       .businessKey(businessKey)
@@ -71,13 +74,13 @@ public class StartProcessByKeyHandlerTest {
     ProcessInstanceWithVariables processInstance = dto.get();
 
     BpmnAwareTests.assertThat(processInstance).isEnded();
-    Assertions.assertThat(processInstance.getBusinessKey()).isEqualTo(businessKey.value());
+    Assertions.assertThat(processInstance.getBusinessKey()).isEqualTo(businessKey.getValue());
     Assertions.assertThat(processInstance.getVariables()).isEmpty();
   }
 
   @Test
   public void startByKey_with_businessKey_and_variable() {
-    BusinessKey businessKey = BusinessKey.random();
+    BusinessKey businessKey = businessKey(UUID.randomUUID().toString());
     Integer num = 2;
 
     StartProcessByKeyCommand cmd = StartProcessByKeyCommand.builder()
@@ -91,15 +94,15 @@ public class StartProcessByKeyHandlerTest {
     ProcessInstanceWithVariables processInstance = dto.get();
 
     BpmnAwareTests.assertThat(processInstance).isEnded();
-    Assertions.assertThat(processInstance.getBusinessKey()).isEqualTo(businessKey.value());
+    Assertions.assertThat(processInstance.getBusinessKey()).isEqualTo(businessKey.getValue());
     Assertions.assertThat(processInstance.getVariables()).isNotEmpty();
     BpmnAwareTests.assertThat(processInstance).hasVariables(VARIABLES.RESULT);
-    Assertions.assertThat(processInstance.getVariables().get(VARIABLES.RESULT)).isEqualTo(businessKey.value() + "/" + 4);
+    Assertions.assertThat(processInstance.getVariables().get(VARIABLES.RESULT)).isEqualTo(businessKey.getValue() + "/" + 4);
   }
 
   @Test
   public void startByKey_isReturnWithVariables_with_businessKey_and_variable() {
-    BusinessKey businessKey = BusinessKey.random();
+    BusinessKey businessKey = businessKey(UUID.randomUUID().toString());
     Integer num = 2;
 
     StartProcessByKeyCommand cmd = StartProcessByKeyCommand.builder()
@@ -112,13 +115,13 @@ public class StartProcessByKeyHandlerTest {
     ProcessInstanceWithVariables processInstance = dto.get();
 
     BpmnAwareTests.assertThat(processInstance).isEnded();
-    Assertions.assertThat(processInstance.getBusinessKey()).isEqualTo(businessKey.value());
+    Assertions.assertThat(processInstance.getBusinessKey()).isEqualTo(businessKey.getValue());
     Assertions.assertThat(processInstance.getVariables()).isEmpty();
   }
 
   public static class DummyProcess {
-    private static final ProcessDefinitionKey KEY = ProcessDefinitionKey.of("dummy");
-    private static final String BPMN = KEY.value() + ".bpmn";
+    private static final ProcessDefinitionKey KEY = processDefinitionKey("dummy");
+    private static final String BPMN = KEY.getValue() + ".bpmn";
     private static final String DELEGATE = "calculator";
 
     enum VARIABLES {
@@ -129,7 +132,7 @@ public class StartProcessByKeyHandlerTest {
 
     }
 
-    public static BpmnModelInstance PROCESS = Bpmn.createExecutableProcess(KEY.value())
+    public static BpmnModelInstance PROCESS = Bpmn.createExecutableProcess(KEY.getValue())
       .startEvent()
       .serviceTask("calculator")
       .camundaDelegateExpression("${calculator}")
