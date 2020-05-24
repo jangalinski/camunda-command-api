@@ -14,26 +14,9 @@
 
   <modules>
     <module>api</module>
-    <module>handler</module>
-    <module>jackson</module>
+    <!--module>handler</module-->
+    <!--module>jackson</module-->
   </modules>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- Testing
-    <dependency>
-      <groupId>io.holunda.decision.lib</groupId>
-      <artifactId>camunda-decision-lib-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    //-->
-
-  </dependencies>
 
   <build>
     <plugins>

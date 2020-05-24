@@ -26,12 +26,12 @@ public class CamundaCommandModuleTest {
     BusinessKey bk = businessKey("1");
 
     String json = om.writeValueAsString(bk);
-
-    System.out.println("json: " + json);
+    assertThat(json).isEqualTo("\"1\"");
 
     BusinessKey businessKey = om.readValue(json, BusinessKey.class);
 
-    System.out.println(businessKey);
+    assertThat(businessKey).isEqualTo(bk);
+    assertThat(businessKey.getValue()).isEqualTo("1");
   }
 
   @Test
