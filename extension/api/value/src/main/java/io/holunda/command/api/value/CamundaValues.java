@@ -16,10 +16,12 @@ import io.holunda.command.api.value.impl.ProcessEngineNameValue;
 import io.holunda.command.api.value.impl.ProcessInstanceIdValue;
 import io.holunda.command.api.value.impl.TaskDefinitionKeyValue;
 import io.holunda.command.api.value.impl.TaskIdValue;
+import io.holunda.command.api.value.impl.TaskPriorityValue;
 import io.holunda.command.api.value.impl.TenantIdValue;
 import io.holunda.command.api.value.impl.TopicNameValue;
 import io.holunda.command.api.value.impl.UserIdValue;
 import io.holunda.command.api.value.impl.VersionTagValue;
+import java.io.Serializable;
 import org.jetbrains.annotations.NotNull;
 
 public final class CamundaValues {
@@ -90,6 +92,10 @@ public final class CamundaValues {
     return TaskIdValue.of(value);
   }
 
+  public static TaskPriority taskPriority(final int value) {
+    return TaskPriorityValue.of(value);
+  }
+
   public static TenantId tenantId(@NotNull final String value) {
     return TenantIdValue.of(value);
   }
@@ -106,23 +112,19 @@ public final class CamundaValues {
     return VersionTagValue.of(value);
   }
 
-  public interface CamundaStringValue {
+  public interface CamundaStringValue extends Serializable {
 
-    @NotNull
     String getValue();
-
   }
 
-  public interface CamundaLongValue {
+  public interface CamundaLongValue extends Serializable {
 
-    long getValue();
-
+    Long getValue();
   }
 
-  public interface CamundaIntValue {
+  public interface CamundaIntValue extends Serializable {
 
-    int getValue();
-
+    Integer getValue();
   }
 
   private CamundaValues() {

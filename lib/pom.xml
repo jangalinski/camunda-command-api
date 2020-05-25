@@ -5,24 +5,24 @@
 
   <parent>
     <groupId>io.holunda.command.project</groupId>
-    <artifactId>camunda-command-extension-api-root</artifactId>
+    <artifactId>camunda-command-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>io.holunda.command</groupId>
-  <artifactId>camunda-command-api-value</artifactId>
+  <artifactId>camunda-command-lib-root</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>test</module>
+    <module>immutables</module>
+  </modules>
 
   <properties>
-    <jacoco.skip>false</jacoco.skip>
+    <jacoco.skip>true</jacoco.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <maven.sources.skip>true</maven.sources.skip>
+    <maven.install.skip>true</maven.install.skip>
+    <gpg.skip>true</gpg.skip>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
 
 </project>

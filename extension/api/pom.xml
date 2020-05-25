@@ -22,8 +22,12 @@
     <dependency>
       <groupId>io.holunda.command.lib</groupId>
       <artifactId>camunda-command-lib-test</artifactId>
-      <version>${project.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.holunda.command.lib</groupId>
+      <artifactId>camunda-command-lib-immutables</artifactId>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 

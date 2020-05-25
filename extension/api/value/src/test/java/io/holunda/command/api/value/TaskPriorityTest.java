@@ -53,11 +53,6 @@ public class TaskPriorityTest {
 
 
   private static TaskPriority of(int value) {
-    return new TaskPriority() {
-      @Override
-      public int getValue() {
-        return value;
-      }
-    };
+    return () -> value;
   }
 }

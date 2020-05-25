@@ -1,12 +1,12 @@
 package io.holunda.command.api.value.impl;
 
 import io.holunda.command.api.value.ProcessDefinitionKey;
-import io.holunda.command.api.value.impl.ValueImplGenerator.StringValueWrapper;
-import io.holunda.command.api.value.impl.ValueImplGenerator.WrappedValue;
+import io.holunda.command.api.value.impl.ValueWrapper.NonEmptyStringValueWrapper;
+import io.holunda.command.lib.immutables.WrappedValue;
 import org.immutables.value.Value;
 
 @Value.Immutable
 @WrappedValue
-abstract class _ProcessDefinitionKey extends StringValueWrapper implements ProcessDefinitionKey {
+abstract class _ProcessDefinitionKey extends NonEmptyStringValueWrapper implements ProcessDefinitionKey {
   // empty generator template
 }

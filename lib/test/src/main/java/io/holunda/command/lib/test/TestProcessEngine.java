@@ -1,4 +1,4 @@
-package io.holunda.command.test;
+package io.holunda.command.lib.test;
 
 import java.util.ArrayList;
 import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;

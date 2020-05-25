@@ -1,7 +1,6 @@
 package io.holunda.command.api.dto;
 
 import io.holunda.command.api.dto.CamundaDtos.CamundaDto;
-import io.holunda.command.api.dto.CamundaDtos.Immutables.ImmutableCamundaDto;
 import io.holunda.command.api.value.BusinessKey;
 import io.holunda.command.api.value.CamundaValues;
 import io.holunda.command.api.value.CaseInstanceId;
@@ -9,6 +8,7 @@ import io.holunda.command.api.value.ProcessDefinitionId;
 import io.holunda.command.api.value.ProcessEngineName;
 import io.holunda.command.api.value.ProcessInstanceId;
 import io.holunda.command.api.value.TenantId;
+import io.holunda.command.lib.immutables.ImmutableCamundaDto;
 import java.util.Optional;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
