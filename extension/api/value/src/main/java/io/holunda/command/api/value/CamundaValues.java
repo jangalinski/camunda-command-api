@@ -1,6 +1,7 @@
 package io.holunda.command.api.value;
 
 import io.holunda.command.api.value.impl.ActivityIdValue;
+import io.holunda.command.api.value.impl.ActivityInstanceIdValue;
 import io.holunda.command.api.value.impl.BusinessKeyValue;
 import io.holunda.command.api.value.impl.CaseDefinitionIdValue;
 import io.holunda.command.api.value.impl.CaseInstanceIdValue;
@@ -30,6 +31,10 @@ public final class CamundaValues {
 
   public static ActivityId activityId(@NotNull final String value) {
     return ActivityIdValue.of(value);
+  }
+
+  public static ActivityInstanceId activityInstanceId(@NotNull final String value) {
+    return ActivityInstanceIdValue.of(value);
   }
 
   public static BusinessKey businessKey(@NotNull final String value) {
@@ -94,6 +99,10 @@ public final class CamundaValues {
 
   public static TaskPriority taskPriority(final int value) {
     return TaskPriorityValue.of(value);
+  }
+
+  public static TaskPriority taskPriority(final TaskPriorityLabel value) {
+    return TaskPriorityValue.of(value.getDefaultValue());
   }
 
   public static TenantId tenantId(@NotNull final String value) {
