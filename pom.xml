@@ -16,19 +16,18 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-
     <!-- VERSIONS -->
     <camunda.version>7.12.0</camunda.version>
     <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
     <camunda-spring-boot.version>3.4.2</camunda-spring-boot.version>
     <camunda-bpm-data.version>0.0.6</camunda-bpm-data.version>
+    <camunda-commons-immutables.version>0.0.2</camunda-commons-immutables.version>
 
     <immutables.version>2.8.2</immutables.version>
     <mapstruct.version>1.3.1.Final</mapstruct.version>
 
     <jgiven.version>0.18.2</jgiven.version>
     <jetbrains-annotations.version>16.0.1</jetbrains-annotations.version>
-    <camunda-commons-immutables.version>0.0.2</camunda-commons-immutables.version>
     <jackson.version>2.10.3</jackson.version>
 
     <pattern.class.itest>**/*ITest.*</pattern.class.itest>
@@ -42,8 +41,8 @@
   </properties>
 
   <modules>
+    <module>project</module>
     <module>extension</module>
-    <module>lib</module>
   </modules>
 
   <dependencyManagement>
@@ -74,23 +73,35 @@
       </dependency>
 
       <dependency>
-        <groupId>io.holunda.commons</groupId>
-        <artifactId>camunda-commons-immutables</artifactId>
-        <version>${camunda-commons-immutables.version}</version>
+        <groupId>io.holunda.command.mapper</groupId>
+        <artifactId>camunda-command-mapper-dto</artifactId>
+        <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>io.holunda.command.lib</groupId>
+        <groupId>io.holunda.command.mapper</groupId>
+        <artifactId>camunda-command-mapper-value</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.project</groupId>
         <artifactId>camunda-command-lib-test</artifactId>
         <version>${project.version}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
-        <groupId>io.holunda.command.lib</groupId>
+        <groupId>io.holunda.command.project</groupId>
         <artifactId>camunda-command-lib-immutables</artifactId>
         <version>${project.version}</version>
         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.commons</groupId>
+        <artifactId>camunda-commons-immutables</artifactId>
+        <version>${camunda-commons-immutables.version}</version>
       </dependency>
 
       <!-- CAMUNDA -->
@@ -140,6 +151,11 @@
 
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>io.holunda.command.project</groupId>
+          <artifactId>camunda-command-maven-plugin</artifactId>
+          <version>${project.version}</version>
+        </plugin>
         <plugin>
           <!-- cleaning -->
           <groupId>org.apache.maven.plugins</groupId>

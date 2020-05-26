@@ -9,12 +9,13 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-command-lib-root</artifactId>
+  <artifactId>camunda-command-project-root</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>test</module>
     <module>immutables</module>
+    <module>test</module>
+    <module>maven</module>
   </modules>
 
   <properties>

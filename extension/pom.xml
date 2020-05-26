@@ -21,7 +21,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>io.holunda.command.lib</groupId>
+      <groupId>io.holunda.command.project</groupId>
       <artifactId>camunda-command-lib-test</artifactId>
       <scope>test</scope>
     </dependency>

@@ -5,12 +5,10 @@
 
   <parent>
     <groupId>io.holunda.command.project</groupId>
-    <artifactId>camunda-command-root</artifactId>
+    <artifactId>camunda-command-project-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
   </parent>
 
-  <groupId>io.holunda.command.lib</groupId>
   <artifactId>camunda-command-lib-test</artifactId>
 
   <properties>

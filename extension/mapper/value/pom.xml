@@ -21,14 +21,6 @@
       <groupId>io.holunda.command.api</groupId>
       <artifactId>camunda-command-api-value</artifactId>
     </dependency>
-
-
-    <dependency>
-      <groupId>org.mapstruct</groupId>
-      <artifactId>mapstruct</artifactId>
-      <version>${mapstruct.version}</version>
-    </dependency>
-
   </dependencies>
 
   <build>
@@ -62,6 +54,11 @@
           </execution>
         </executions>
       </plugin>
+      <!--plugin>
+        <groupId>io.holunda.command.project</groupId>
+        <artifactId>camunda-command-maven-plugin</artifactId>
+        <version>${project.parent.version}</version>
+      </plugin-->
     </plugins>
   </build>
 </project>

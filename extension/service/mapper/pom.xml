@@ -33,12 +33,6 @@
       <artifactId>mapstruct</artifactId>
       <version>${mapstruct.version}</version>
     </dependency>
-
-    <dependency>
-      <groupId>io.holunda.command.lib</groupId>
-      <artifactId>camunda-command-lib-test</artifactId>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>

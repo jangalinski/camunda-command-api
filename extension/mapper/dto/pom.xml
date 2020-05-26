@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>io.holunda.command.project</groupId>
-    <artifactId>camunda-command-extension-root</artifactId>
+    <artifactId>camunda-command-extension-mapper-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-command-extension-api-root</artifactId>
-  <packaging>pom</packaging>
+  <groupId>io.holunda.command.mapper</groupId>
+  <artifactId>camunda-command-mapper-dto</artifactId>
 
-  <modules>
-    <module>command</module>
-    <module>dto</module>
-    <module>handler</module>
-    <module>value</module>
-  </modules>
+  <properties>
+    <jacoco.skip>false</jacoco.skip>
+  </properties>
 
   <dependencies>
     <dependency>
-      <groupId>io.holunda.command.project</groupId>
-      <artifactId>camunda-command-lib-immutables</artifactId>
-      <scope>provided</scope>
+      <groupId>io.holunda.command.api</groupId>
+      <artifactId>camunda-command-api-dto</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.holunda.command.mapper</groupId>
+      <artifactId>camunda-command-mapper-value</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.holunda.commons</groupId>
+      <artifactId>camunda-commons-immutables</artifactId>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <!-- JGiven Reports -->

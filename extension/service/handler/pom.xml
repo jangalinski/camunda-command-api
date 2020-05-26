@@ -27,12 +27,6 @@
       <artifactId>camunda-engine</artifactId>
       <scope>provided</scope>
     </dependency>
-
-    <dependency>
-      <groupId>io.holunda.command.lib</groupId>
-      <artifactId>camunda-command-lib-test</artifactId>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
