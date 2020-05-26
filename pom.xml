@@ -24,6 +24,8 @@
     <camunda-bpm-data.version>0.0.6</camunda-bpm-data.version>
 
     <immutables.version>2.8.2</immutables.version>
+    <mapstruct.version>1.3.1.Final</mapstruct.version>
+
     <jgiven.version>0.18.2</jgiven.version>
     <jetbrains-annotations.version>16.0.1</jetbrains-annotations.version>
     <camunda-commons-immutables.version>0.0.2</camunda-commons-immutables.version>
@@ -48,14 +50,26 @@
     <dependencies>
       <!-- PROJECT -->
       <dependency>
-        <groupId>io.holunda.command</groupId>
+        <groupId>io.holunda.command.api</groupId>
         <artifactId>camunda-command-api-value</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>io.holunda.command</groupId>
+        <groupId>io.holunda.command.api</groupId>
         <artifactId>camunda-command-api-dto</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.api</groupId>
+        <artifactId>camunda-command-api-command</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.api</groupId>
+        <artifactId>camunda-command-api-handler</artifactId>
         <version>${project.version}</version>
       </dependency>
 

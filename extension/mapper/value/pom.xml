@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>io.holunda.command.project</groupId>
-    <artifactId>camunda-command-root</artifactId>
+    <artifactId>camunda-command-extension-mapper-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-command-extension-root</artifactId>
-  <packaging>pom</packaging>
+  <groupId>io.holunda.command.mapper</groupId>
+  <artifactId>camunda-command-mapper-value</artifactId>
 
-  <modules>
-    <module>api</module>
-    <module>mapper</module>
-    <module>service</module>
-    <!--module>jackson</module-->
-  </modules>
+  <properties>
+    <jacoco.skip>false</jacoco.skip>
+  </properties>
 
   <dependencies>
     <dependency>
-      <groupId>io.holunda.command.lib</groupId>
-      <artifactId>camunda-command-lib-test</artifactId>
-      <scope>test</scope>
+      <groupId>io.holunda.command.api</groupId>
+      <artifactId>camunda-command-api-value</artifactId>
     </dependency>
+
+
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${mapstruct.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>

@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>io.holunda.command</groupId>
+  <groupId>io.holunda.command.api</groupId>
   <artifactId>camunda-command-api-value</artifactId>
 
   <properties>
@@ -22,12 +22,6 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson.version}</version>
       <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 

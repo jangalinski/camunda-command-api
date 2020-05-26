@@ -5,21 +5,25 @@
 
   <parent>
     <groupId>io.holunda.command.project</groupId>
-    <artifactId>camunda-command-root</artifactId>
+    <artifactId>camunda-command-extension-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-command-extension-root</artifactId>
+  <artifactId>camunda-command-extension-mapper-root</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>api</module>
-    <module>mapper</module>
-    <module>service</module>
-    <!--module>jackson</module-->
+    <!--module>dto</module-->
+    <module>value</module>
   </modules>
 
   <dependencies>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>io.holunda.command.lib</groupId>
       <artifactId>camunda-command-lib-test</artifactId>

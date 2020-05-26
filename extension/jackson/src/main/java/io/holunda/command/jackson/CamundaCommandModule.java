@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import io.holunda.command.api.value.ActivityId;
 import io.holunda.command.api.value.ActivityInstanceId;
 import io.holunda.command.api.value.BusinessKey;
-import io.holunda.command.api.value.CamundaValue.CamundaStringValue;
+import io.holunda.command.api.value.CamundaValues.CamundaStringValue;
 import io.holunda.command.api.value.CaseDefinitionId;
 import io.holunda.command.api.value.CaseInstanceId;
 import io.holunda.command.api.value.DeploymentId;

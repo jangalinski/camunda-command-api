@@ -13,9 +13,10 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>value</module>
-    <module>dto</module>
     <module>command</module>
+    <module>dto</module>
+    <module>handler</module>
+    <module>value</module>
   </modules>
 
   <dependencies>
@@ -30,7 +31,6 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <!-- JGiven Reports -->

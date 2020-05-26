@@ -10,7 +10,7 @@
   </parent>
 
   <groupId>io.holunda.command.api</groupId>
-  <artifactId>camunda-command-api-command</artifactId>
+  <artifactId>camunda-command-api-handler</artifactId>
 
   <properties>
     <jacoco.skip>false</jacoco.skip>
@@ -19,23 +19,12 @@
   <dependencies>
     <dependency>
       <groupId>io.holunda.command.api</groupId>
-      <artifactId>camunda-command-api-dto</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.holunda.command.api</groupId>
-      <artifactId>camunda-command-api-value</artifactId>
+      <artifactId>camunda-command-api-command</artifactId>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.commons</groupId>
       <artifactId>camunda-commons-typed-values</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
