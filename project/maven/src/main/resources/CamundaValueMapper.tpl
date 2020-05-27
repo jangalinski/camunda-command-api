@@ -25,9 +25,13 @@ public interface ${typeName}Mapper {
     return Optional.ofNullable(value).map(${typeName}Value::of);
   }
 
-
   @Named(${typeName}Mapper.FROM)
   default ${primitiveType} convert(final ${typeName} value) {
     return value.getValue();
+  }
+
+  @Named(ProcessInstanceIdMapper.FROM)
+  default ${primitiveType} convertOptional(final Optional<${typeName}> value) {
+    return value.map(${typeName}::getValue).orElse(null);
   }
 }
