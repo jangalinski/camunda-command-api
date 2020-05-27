@@ -12,7 +12,7 @@ public class BusinessKeyMapperTest {
   public void convert() {
     BusinessKey businessKey = CamundaValues.businessKey("12345");
 
-    assertThat(BusinessKeyMapper.INSTANCE.fromValue(businessKey)).isEqualTo("12345");
-    assertThat(BusinessKeyMapper.INSTANCE.toValue("12345")).isEqualTo(businessKey);
+    assertThat(BusinessKeyMapper.INSTANCE.convert(businessKey)).isEqualTo("12345");
+    assertThat(BusinessKeyMapper.INSTANCE.convert("12345")).isEqualTo(businessKey);
   }
 }

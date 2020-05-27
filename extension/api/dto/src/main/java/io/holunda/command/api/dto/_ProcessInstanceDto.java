@@ -30,7 +30,7 @@ interface _ProcessInstanceDto extends CamundaDto {
 
   Optional<BusinessKey> getBusinessKey();
 
-  ProcessInstanceId getRootProcessInstanceId();
+  Optional<ProcessInstanceId> getRootProcessInstanceId();
 
   Optional<CaseInstanceId> getCaseInstanceId();
 
