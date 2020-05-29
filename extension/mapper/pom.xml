@@ -13,7 +13,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>dto</module>
+    <!-- FIXME module>dto</module-->
     <module>value</module>
   </modules>
 

@@ -25,7 +25,6 @@
 
     <immutables.version>2.8.2</immutables.version>
     <mapstruct.version>1.3.1.Final</mapstruct.version>
-    <spoon.version>8.1.0</spoon.version>
 
     <jgiven.version>0.18.2</jgiven.version>
     <jetbrains-annotations.version>16.0.1</jetbrains-annotations.version>
@@ -39,6 +38,7 @@
     <additionalparam>-Xdoclint:none</additionalparam>
     <!-- Skip instrumentalization by default -->
     <jacoco.skip>true</jacoco.skip>
+    <gpg.keyname>BY_SECRET</gpg.keyname>
   </properties>
 
   <modules>
@@ -83,6 +83,19 @@
         <groupId>io.holunda.command.mapper</groupId>
         <artifactId>camunda-command-mapper-value</artifactId>
         <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.project</groupId>
+        <artifactId>camunda-command-generator-annotation</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.project</groupId>
+        <artifactId>camunda-command-generator-processor</artifactId>
+        <version>${project.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
@@ -152,11 +165,11 @@
 
     <pluginManagement>
       <plugins>
-        <plugin>
+        <!--plugin>
           <groupId>io.holunda.command.project</groupId>
           <artifactId>camunda-command-maven-plugin</artifactId>
           <version>${project.version}</version>
-        </plugin>
+        </plugin-->
         <plugin>
           <!-- cleaning -->
           <groupId>org.apache.maven.plugins</groupId>

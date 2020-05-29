@@ -4,8 +4,17 @@ import java.util.Map;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
 import org.mapstruct.Mapper;
+import org.mapstruct.MapperConfig;
 
 public final class CamundaValueMappers {
+
+  @MapperConfig(uses = {
+
+  })
+  public static class CamundaValueMapperConfig {
+
+  }
+
 
 
   @Mapper

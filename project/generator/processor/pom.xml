@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.holunda.command.project</groupId>
+    <artifactId>camunda-command-project-generator-root</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>camunda-command-generator-processor</artifactId>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>camunda-command-generator-annotation</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.toolisticon.spiap</groupId>
+      <artifactId>spiap-api</artifactId>
+      <version>0.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.toolisticon.spiap</groupId>
+      <artifactId>spiap-processor</artifactId>
+      <version>0.7.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.toolisticon.annotationprocessortoolkit</groupId>
+      <artifactId>annotationprocessor</artifactId>
+      <version>0.14.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- recommended for testing your annotation processor -->
+    <dependency>
+      <groupId>io.toolisticon.compiletesting</groupId>
+      <artifactId>compiletesting</artifactId>
+      <version>0.7.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>camunda-command-lib-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!--dependency>
+      <groupId>io.holunda.command.api</groupId>
+      <artifactId>camunda-command-api-value</artifactId>
+      <scope>test</scope>
+    </dependency-->
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${mapstruct.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <!--build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <relocations>
+                <relocation>
+                  <pattern>io.toolisticon.annotationprocessortoolkit</pattern>
+                  <shadedPattern>
+                    your.projects.base.package._3rdparty.io.toolisticon.annotationprocessortoolkit
+                  </shadedPattern>
+                </relocation>
+              </relocations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build-->
+</project>

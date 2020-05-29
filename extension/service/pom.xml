@@ -14,12 +14,9 @@
 
   <modules>
     <module>handler</module>
-    <module>mapper</module>
   </modules>
 
-  <dependencies>
-
-  </dependencies>
+  <dependencies />
 
   <build>
     <plugins>
