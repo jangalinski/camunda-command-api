@@ -3,6 +3,7 @@ package io.holunda.command.project.generator.processor;
 import io.holunda.command.project.generator.annotation.CamundaValueMapperGenerator;
 import io.holunda.command.project.generator.processor.template.CamundaValueMapperTemplate;
 import io.toolisticon.annotationprocessortoolkit.AbstractAnnotationProcessor;
+import io.toolisticon.annotationprocessortoolkit.templating.TemplateProcessor;
 import io.toolisticon.annotationprocessortoolkit.tools.ElementUtils.AccessEnclosingElements;
 import io.toolisticon.annotationprocessortoolkit.tools.FilerUtils;
 import io.toolisticon.annotationprocessortoolkit.tools.MessagerUtils;
@@ -57,6 +58,11 @@ public class CamundaValueMapperGeneratorProcessor extends AbstractAnnotationProc
   }
 
   private void write(Element handlerElement, CamundaValueMapperTemplate template) {
+
+    System.out.println("========= MODEL: " + template);
+    System.out.println("========= OUTPUT:" +  TemplateProcessor.processTemplateResourceFile(template.getTemplateResource(), template.getModel()));
+
+
     final String filePath = template.getFqn();
 
     try {

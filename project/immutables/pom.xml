@@ -14,7 +14,7 @@
   <dependencies>
     <dependency>
       <groupId>org.immutables</groupId>
-      <artifactId>value</artifactId>
+      <artifactId>value-annotations</artifactId>
       <version>${immutables.version}</version>
     </dependency>
     <dependency>

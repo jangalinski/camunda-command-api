@@ -73,10 +73,9 @@
   <build>
     <plugins>
 
-      <plugin>
+      <!--plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.3</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -95,7 +94,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin-->
 
     </plugins>
   </build>

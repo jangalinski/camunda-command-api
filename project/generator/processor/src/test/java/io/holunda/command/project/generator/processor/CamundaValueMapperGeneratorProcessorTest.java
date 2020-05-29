@@ -1,5 +1,7 @@
 package io.holunda.command.project.generator.processor;
 
+import io.holunda.command.project.generator.processor.template.CamundaValueMapperTemplate;
+import io.toolisticon.annotationprocessortoolkit.templating.TemplateProcessor;
 import io.toolisticon.annotationprocessortoolkit.tools.MessagerUtils;
 import io.toolisticon.compiletesting.CompileTestBuilder;
 import javax.tools.JavaFileObject.Kind;
@@ -28,5 +30,18 @@ public class CamundaValueMapperGeneratorProcessorTest {
 
       ;
       //.testCompilation();
+  }
+
+  @Test
+  public void process_template() {
+     CamundaValueMapperTemplate tpl = CamundaValueMapperTemplate.builder()
+      .packageName("io.holunda.command.mapper.value")
+      .primitiveTypeSimpleName("String")
+      .typeSimpleName("ActivityId")
+      .build();
+
+    System.out.println(tpl);
+
+    System.out.println(tpl.process());
   }
 }

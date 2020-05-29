@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.SOURCE)
 @Documented
-public @interface CamundaValueMapperGenerator {
+public @interface CamundaValueTypeGenerator {
   // empty
 }

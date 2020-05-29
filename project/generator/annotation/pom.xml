@@ -10,8 +10,4 @@
   </parent>
 
   <artifactId>camunda-command-generator-annotation</artifactId>
-
-  <dependencies>
-
-  </dependencies>
 </project>

@@ -15,9 +15,7 @@
   <modules>
     <module>generator</module>
     <module>immutables</module>
-    <!--module>spoon</module-->
     <module>test</module>
-    <!--module>maven</module-->
   </modules>
 
   <properties>
