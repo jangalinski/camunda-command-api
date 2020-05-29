@@ -66,11 +66,16 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <annotationProcessorPaths>
-            <path>
+            <annotationProcessorPath>
               <groupId>org.mapstruct</groupId>
               <artifactId>mapstruct-processor</artifactId>
               <version>${mapstruct.version}</version>
-            </path>
+            </annotationProcessorPath>
+            <annotationProcessorPath>
+              <groupId>io.holunda.command.project</groupId>
+              <artifactId>camunda-command-generator-processor</artifactId>
+              <version>${project.version}</version>
+            </annotationProcessorPath>
           </annotationProcessorPaths>
         </configuration>
       </plugin>

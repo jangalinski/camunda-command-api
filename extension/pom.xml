@@ -23,11 +23,6 @@
     <dependency>
       <groupId>io.holunda.command.project</groupId>
       <artifactId>camunda-command-generator-annotation</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>io.holunda.command.project</groupId>
-      <artifactId>camunda-command-generator-processor</artifactId>
       <scope>provided</scope>
     </dependency>
 

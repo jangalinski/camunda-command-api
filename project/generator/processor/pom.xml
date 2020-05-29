@@ -70,13 +70,13 @@
 
   </dependencies>
 
-  <!--build>
+  <build>
     <plugins>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.3</version>
+        <version>3.2.3</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -86,9 +86,9 @@
             <configuration>
               <relocations>
                 <relocation>
-                  <pattern>io.toolisticon.annotationprocessortoolkit</pattern>
+                  <pattern>io.toolisticon</pattern>
                   <shadedPattern>
-                    your.projects.base.package._3rdparty.io.toolisticon.annotationprocessortoolkit
+                    io.holunda.command._3rdparty.io.toolisticon
                   </shadedPattern>
                 </relocation>
               </relocations>
@@ -98,5 +98,5 @@
       </plugin>
 
     </plugins>
-  </build-->
+  </build>
 </project>

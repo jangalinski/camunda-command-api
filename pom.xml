@@ -163,15 +163,13 @@
   <build>
     <defaultGoal>clean jacoco:prepare-agent package</defaultGoal>
 
+    <!-- declare versions and common configurations -->
     <pluginManagement>
       <plugins>
-        <!--plugin>
-          <groupId>io.holunda.command.project</groupId>
-          <artifactId>camunda-command-maven-plugin</artifactId>
-          <version>${project.version}</version>
-        </plugin-->
+        <!--
+          # maven-clean-plugin
+        //-->
         <plugin>
-          <!-- cleaning -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
@@ -198,8 +196,12 @@
           </executions>
         </plugin>
 
+        <!--
+          # maven-compiler-plugin
+
+          java compiler
+        //-->
         <plugin>
-          <!-- java compiler -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
@@ -236,8 +238,8 @@
           </executions>
         </plugin>
 
+        <!-- resources -->
         <plugin>
-          <!-- resources -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.1.0</version>
@@ -275,6 +277,9 @@
           <version>2.20.1</version>
         </plugin>
 
+        <!--
+          # maven-javadoc-plugin
+        //-->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
@@ -289,7 +294,9 @@
           </executions>
         </plugin>
 
-        <!-- attach sources -->
+        <!--
+          # maven-source-plugin
+        //-->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
@@ -331,7 +338,11 @@
           </configuration>
         </plugin>
 
-        <!-- To sign the artifacts -->
+        <!--
+          # maven-gpg-plugin
+
+          To sign the artifacts
+        //-->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
@@ -412,10 +423,16 @@
           </executions>
         </plugin>
 
+        <!--
+          # build-helper-maven-plugin
+
+          Since this project heavily uses annotation processing for code generation, each module should declare the default
+          generated sources directory "target/generated-sources/annotations" as additional source/resource dir.
+        //-->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.9.1</version>
+          <version>3.1.0</version>
           <executions>
             <execution>
               <id>add-source</id>
@@ -425,15 +442,41 @@
               </goals>
               <configuration>
                 <sources>
-                  <source>src/main/generated</source>
+                  <source>${project.build.directory}/generated-sources/annotations</source>
                 </sources>
+              </configuration>
+            </execution>
+            <execution>
+              <id>add-resource</id>
+              <phase>generate-resources</phase>
+              <goals>
+                <goal>add-resource</goal>
+              </goals>
+              <configuration>
+                <resources>
+                  <resource>
+                    <directory>${project.build.directory}/generated-sources/annotations</directory>
+                    <targetPath/>
+                  </resource>
+                </resources>
               </configuration>
             </execution>
           </executions>
         </plugin>
+        <!--
+          # maven-shade-plugin
+
+          just declare, configure in project/generator/processor
+        //-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>3.2.3</version>
+        </plugin>
       </plugins>
     </pluginManagement>
 
+    <!-- declare globally used plugins (all modules) -->
     <plugins>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -446,6 +489,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <!-- add source/resource 'target/generated-sources/annotations' -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
@@ -530,20 +578,20 @@
       </build>
     </profile>
 
-      <!--
-    <profile>
-        Profile for building examples
-      <id>examples</id>
-      <activation>
-        <property>
-          <name>!skipExamples</name>
-        </property>
-      </activation>
-      <modules>
-        <module>examples</module>
-      </modules>
-    </profile>
-      -->
+    <!--
+  <profile>
+      Profile for building examples
+    <id>examples</id>
+    <activation>
+      <property>
+        <name>!skipExamples</name>
+      </property>
+    </activation>
+    <modules>
+      <module>examples</module>
+    </modules>
+  </profile>
+    -->
 
   </profiles>
 

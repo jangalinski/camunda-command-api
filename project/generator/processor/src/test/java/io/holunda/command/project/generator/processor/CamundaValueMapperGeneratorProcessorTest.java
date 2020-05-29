@@ -25,7 +25,7 @@ public class CamundaValueMapperGeneratorProcessorTest {
       .addSources("/processor/_CamundaValueMappersGenerator.java")
       .compilationShouldSucceed()
       .expectedJavaFileObjectExists(StandardLocation.SOURCE_OUTPUT,"io.holunda.command.mapper.value.ActivityIdMapper", Kind.SOURCE)
-      .
+
       ;
       //.testCompilation();
   }
