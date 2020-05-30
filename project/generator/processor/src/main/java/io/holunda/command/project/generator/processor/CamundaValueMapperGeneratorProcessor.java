@@ -1,6 +1,6 @@
 package io.holunda.command.project.generator.processor;
 
-import io.holunda.command.project.generator.annotation.CamundaValueMapperGenerator;
+import io.holunda.command.project.generator.api.CamundaValueMapperGenerator;
 import io.holunda.command.project.generator.processor.template.CamundaValueMapperTemplate;
 import io.toolisticon.annotationprocessortoolkit.AbstractAnnotationProcessor;
 import io.toolisticon.annotationprocessortoolkit.templating.TemplateProcessor;

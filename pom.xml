@@ -89,19 +89,6 @@
 
       <dependency>
         <groupId>io.holunda.command.project</groupId>
-        <artifactId>camunda-command-generator-annotation</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>io.holunda.command.project</groupId>
-        <artifactId>camunda-command-generator-processor</artifactId>
-        <version>${project.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>io.holunda.command.project</groupId>
         <artifactId>camunda-command-lib-test</artifactId>
         <version>${project.version}</version>
         <scope>test</scope>
@@ -502,14 +489,24 @@
 
   <profiles>
 
+    <!--
+      this profile is activated in modules by a marker file ".enable_annotation_processor"
+    //-->
     <profile>
-      <id>use_annotation_processor</id>
+      <id>annotation_processor</id>
       <activation>
         <activeByDefault>false</activeByDefault>
         <file>
-          <exists>.generated</exists>
+          <exists>.enable_annotation_processor</exists>
         </file>
       </activation>
+      <dependencies>
+        <dependency>
+          <groupId>io.holunda.command.project</groupId>
+          <artifactId>camunda-command-generator-api</artifactId>
+          <version>${project.version}</version>
+        </dependency>
+      </dependencies>
       <build>
         <plugins>
           <plugin>

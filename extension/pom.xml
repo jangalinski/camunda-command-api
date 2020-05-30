@@ -22,12 +22,6 @@
   <dependencies>
     <dependency>
       <groupId>io.holunda.command.project</groupId>
-      <artifactId>camunda-command-generator-annotation</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>io.holunda.command.project</groupId>
       <artifactId>camunda-command-lib-test</artifactId>
       <scope>test</scope>
     </dependency>

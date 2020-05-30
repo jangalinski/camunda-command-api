@@ -1,8 +1,8 @@
 package io.holunda.command.project.generator.processor;
 
-import io.holunda.command.project.generator.annotation.CamundaValueTypeGenerator;
+import io.holunda.command.project.generator.api.CamundaValueTypeGenerator;
 import io.holunda.command.project.generator.processor.model.FqnUtil;
-import io.holunda.command.project.generator.processor.model.ValueTypeDeclaration;
+import io.holunda.command.project.generator.api.model.ValueTypeDeclaration;
 import io.holunda.command.project.generator.processor.template.CamundaValueTypeTemplate;
 import io.holunda.command.project.generator.processor.template.Template;
 import io.toolisticon.annotationprocessortoolkit.AbstractAnnotationProcessor;

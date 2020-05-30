@@ -12,10 +12,10 @@
   <artifactId>camunda-command-generator-processor</artifactId>
 
   <dependencies>
-
     <dependency>
       <groupId>io.holunda.command.project</groupId>
-      <artifactId>camunda-command-generator-annotation</artifactId>
+      <artifactId>camunda-command-generator-api</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
@@ -35,12 +35,6 @@
       <groupId>io.toolisticon.annotationprocessortoolkit</groupId>
       <artifactId>annotationprocessor</artifactId>
       <version>0.14.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <scope>provided</scope>
     </dependency>
 
     <!-- recommended for testing your annotation processor -->

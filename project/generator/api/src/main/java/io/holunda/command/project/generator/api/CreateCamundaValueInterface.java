@@ -1,4 +1,4 @@
-package io.holunda.command.project.generator.annotation;
+package io.holunda.command.project.generator.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

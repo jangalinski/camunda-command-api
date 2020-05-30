@@ -1,4 +1,4 @@
-package io.holunda.command.project.generator.annotation;
+package io.holunda.command.project.generator.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.SOURCE)
 @Documented
-public @interface CamundaValueTypeGenerator {
+public @interface CamundaValueMapperGenerator {
   // empty
 }

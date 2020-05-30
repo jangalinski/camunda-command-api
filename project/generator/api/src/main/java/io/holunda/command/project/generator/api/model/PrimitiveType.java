@@ -1,4 +1,4 @@
-package io.holunda.command.project.generator.processor.model;
+package io.holunda.command.project.generator.api.model;
 
 import lombok.AccessLevel;
 import lombok.Getter;

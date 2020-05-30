@@ -1,6 +1,6 @@
 package io.holunda.command.project.generator.processor.template;
 
-import io.holunda.command.project.generator.processor.model.ValueTypeDeclaration;
+import io.holunda.command.project.generator.api.model.ValueTypeDeclaration;
 import io.toolisticon.annotationprocessortoolkit.templating.TemplateProcessor;
 import java.util.HashMap;
 import java.util.Map;

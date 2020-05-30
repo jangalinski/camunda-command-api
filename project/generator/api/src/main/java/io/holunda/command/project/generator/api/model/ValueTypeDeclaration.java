@@ -1,4 +1,4 @@
-package io.holunda.command.project.generator.processor.model;
+package io.holunda.command.project.generator.api.model;
 
 import java.util.stream.Stream;
 import lombok.AccessLevel;
