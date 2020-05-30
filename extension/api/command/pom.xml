@@ -13,6 +13,7 @@
   <artifactId>camunda-command-api-command</artifactId>
 
   <properties>
+    <project.activate-annotation-processors>true</project.activate-annotation-processors>
     <jacoco.skip>false</jacoco.skip>
   </properties>
 

@@ -13,6 +13,7 @@
   <artifactId>camunda-command-mapper-value</artifactId>
 
   <properties>
+    <project.activate-annotation-processors>true</project.activate-annotation-processors>
     <jacoco.skip>false</jacoco.skip>
   </properties>
 
@@ -23,21 +24,4 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>report-aggregate</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>report-aggregate</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>
