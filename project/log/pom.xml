@@ -9,18 +9,21 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-command-lib-immutables</artifactId>
+  <artifactId>log</artifactId>
+  <packaging>jar</packaging>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.immutables</groupId>
-      <artifactId>value-annotations</artifactId>
-      <version>${immutables.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.immutables</groupId>
-      <artifactId>serial</artifactId>
-      <version>${immutables.version}</version>
-    </dependency>
-  </dependencies>
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <compilerArgs>-proc:none</compilerArgs>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
 </project>

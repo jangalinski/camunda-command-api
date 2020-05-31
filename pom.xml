@@ -17,7 +17,6 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-
     <!-- VERSIONS -->
     <camunda.version>7.12.0</camunda.version>
     <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
@@ -30,7 +29,6 @@
 
     <jgiven.version>0.18.2</jgiven.version>
     <jetbrains-annotations.version>16.0.1</jetbrains-annotations.version>
-    <jackson.version>2.10.3</jackson.version>
 
     <pattern.class.itest>**/*ITest.*</pattern.class.itest>
     <pattern.package.itest>**/itest/**/*.*</pattern.package.itest>
@@ -89,16 +87,23 @@
 
       <dependency>
         <groupId>io.holunda.command.project</groupId>
-        <artifactId>camunda-command-lib-test</artifactId>
+        <artifactId>camunda-command-generator-api</artifactId>
         <version>${project.version}</version>
-        <scope>test</scope>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>io.holunda.command.project</groupId>
-        <artifactId>camunda-command-lib-immutables</artifactId>
+        <artifactId>camunda-command-generator-processor</artifactId>
         <version>${project.version}</version>
         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>io.holunda.command.project</groupId>
+        <artifactId>camunda-command-project-test</artifactId>
+        <version>${project.version}</version>
+        <scope>test</scope>
       </dependency>
 
       <dependency>
@@ -492,12 +497,12 @@
     <!--
       this profile is activated in modules by a marker file ".enable_annotation_processor"
     //-->
-    <profile>
+    <!--profile>
       <id>annotation_processor</id>
       <activation>
         <activeByDefault>false</activeByDefault>
         <file>
-          <exists>.enable_annotation_processor</exists>
+          <exists>.enable_annotation_processor1</exists>
         </file>
       </activation>
       <dependencies>
@@ -534,7 +539,7 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
+    </profile-->
 
     <profile>
       <id>itest</id>
@@ -660,18 +665,6 @@
     </repository>
   </distributionManagement>
 
-  <pluginRepositories>
-    <!-- required for Dokka (Kotlin javadoc), Orchid (Docs) -->
-    <pluginRepository>
-      <id>jcenter</id>
-      <name>JCenter</name>
-      <url>https://jcenter.bintray.com/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-    </pluginRepository>
-  </pluginRepositories>
-
   <developers>
     <developer>
       <id>jangalinski</id>
@@ -684,5 +677,4 @@
       <organizationUrl>https://holisticon.de</organizationUrl>
     </developer>
   </developers>
-
 </project>

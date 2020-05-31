@@ -5,22 +5,31 @@
 
   <parent>
     <groupId>io.holunda.command.project</groupId>
-    <artifactId>camunda-command-project-generator-root</artifactId>
+    <artifactId>camunda-command-extension-api-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-command-generator-api</artifactId>
+  <artifactId>log-examples</artifactId>
+
+  <properties>
+    <jacoco.skip>false</jacoco.skip>
+  </properties>
 
   <dependencies>
+
     <dependency>
-      <groupId>org.immutables</groupId>
-      <artifactId>value-annotations</artifactId>
-      <version>${immutables.version}</version>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>log</artifactId>
+      <version>${project.version}</version>
     </dependency>
+
     <dependency>
-      <groupId>org.immutables</groupId>
-      <artifactId>serial</artifactId>
-      <version>${immutables.version}</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <scope>provided</scope>
     </dependency>
+
+
   </dependencies>
+
 </project>

@@ -8,7 +8,7 @@ import io.holunda.command.api.value.ProcessDefinitionId;
 import io.holunda.command.api.value.ProcessEngineName;
 import io.holunda.command.api.value.ProcessInstanceId;
 import io.holunda.command.api.value.TenantId;
-import io.holunda.command.lib.immutables.ImmutableCamundaDto;
+import io.holunda.command.project.generator.api.immutables.ImmutableCamundaDto;
 import java.util.Optional;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;

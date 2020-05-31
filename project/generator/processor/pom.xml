@@ -10,6 +10,7 @@
   </parent>
 
   <artifactId>camunda-command-generator-processor</artifactId>
+  <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
@@ -47,7 +48,7 @@
 
     <dependency>
       <groupId>io.holunda.command.project</groupId>
-      <artifactId>camunda-command-lib-test</artifactId>
+      <artifactId>camunda-command-project-test</artifactId>
       <scope>test</scope>
     </dependency>
     <!--dependency>
@@ -66,28 +67,38 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <relocations>
-                <relocation>
-                  <pattern>io.toolisticon.annotationprocessortoolkit</pattern>
-                  <shadedPattern>
-                    io.holunda.command._3rdparty.io.toolisticon.annotationprocessortoolkit
-                  </shadedPattern>
-                </relocation>
-              </relocations>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-compiler-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <compilerArgs>-proc:none</compilerArgs>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+
+
+
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-shade-plugin</artifactId>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <phase>package</phase>-->
+<!--            <goals>-->
+<!--              <goal>shade</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <relocations>-->
+<!--                <relocation>-->
+<!--                  <pattern>io.toolisticon.annotationprocessortoolkit</pattern>-->
+<!--                  <shadedPattern>-->
+<!--                    io.holunda.command._3rdparty.io.toolisticon.annotationprocessortoolkit-->
+<!--                  </shadedPattern>-->
+<!--                </relocation>-->
+<!--              </relocations>-->
+<!--            </configuration>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
     </plugins>
   </build>
 </project>

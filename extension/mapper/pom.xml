@@ -19,6 +19,16 @@
 
   <dependencies>
     <dependency>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>camunda-command-generator-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>camunda-command-generator-processor</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
       <scope>provided</scope>

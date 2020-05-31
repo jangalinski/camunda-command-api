@@ -1,4 +1,4 @@
-package io.holunda.command.lib.immutables;
+package io.holunda.command.project.generator.api.immutables;
 
 import org.immutables.serial.Serial;
 import org.immutables.value.Value;

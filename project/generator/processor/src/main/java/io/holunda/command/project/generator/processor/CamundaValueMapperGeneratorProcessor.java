@@ -22,7 +22,7 @@ import javax.lang.model.element.PackageElement;
 import javax.lang.model.element.TypeElement;
 
 @SupportedAnnotationTypes("io.holunda.command.project.generator.annotation.CamundaValueMapperGenerator")
-@Service(Processor.class)
+//@Service(Processor.class)
 public class CamundaValueMapperGeneratorProcessor extends AbstractAnnotationProcessor {
 
   private final static Class<CamundaValueMapperGenerator> ANNOTATION = CamundaValueMapperGenerator.class;

@@ -13,8 +13,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>generator</module>
-    <module>immutables</module>
+    <module>log</module>
+    <!-- FIXME module>generator</module -->
     <module>test</module>
   </modules>
 

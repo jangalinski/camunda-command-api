@@ -13,17 +13,11 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>command</module>
-    <module>dto</module>
-    <module>handler</module>
-    <module>value</module>
+    <!-- FIXME module>command</module-->
+    <!-- FIXME module>dto</module-->
+    <!-- FIXME module>handler</module-->
+    <!-- FIXMEmodule>value</module-->
+    <module>log-example</module>
   </modules>
 
-  <dependencies>
-    <dependency>
-      <groupId>io.holunda.command.project</groupId>
-      <artifactId>camunda-command-lib-immutables</artifactId>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
 </project>

@@ -17,11 +17,14 @@ import java.util.Set;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
+import javax.annotation.processing.SupportedSourceVersion;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 
 @SupportedAnnotationTypes("io.holunda.command.project.generator.annotation.CamundaValueTypeGenerator")
 @Service(Processor.class)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class CamundaValueTypeGeneratorProcessor extends AbstractAnnotationProcessor {
 
   private final static Class<CamundaValueTypeGenerator> ANNOTATION = CamundaValueTypeGenerator.class;
