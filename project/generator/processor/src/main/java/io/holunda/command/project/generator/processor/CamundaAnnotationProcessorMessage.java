@@ -1,12 +1,7 @@
 package io.holunda.command.project.generator.processor;
 
 import io.toolisticon.annotationprocessortoolkit.tools.corematcher.ValidationMessage;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-@Getter
 public enum CamundaAnnotationProcessorMessage implements ValidationMessage {
 
   ERROR_COULD_NOT_CREATE_VALUE_MAPPER("CAMUNDA_COMMAND_ERROR_001", "Couldn't create CamundaValueMapper : ${0}");
@@ -26,4 +21,18 @@ public enum CamundaAnnotationProcessorMessage implements ValidationMessage {
    */
   private final String message;
 
+  CamundaAnnotationProcessorMessage(String code, String message) {
+    this.code = code;
+    this.message = message;
+  }
+
+  @Override
+  public String getCode() {
+    return code;
+  }
+
+  @Override
+  public String getMessage() {
+    return message;
+  }
 }

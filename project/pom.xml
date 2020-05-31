@@ -13,8 +13,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>log</module>
-    <!-- FIXME module>generator</module -->
+    <module>generator</module>
     <module>test</module>
   </modules>
 

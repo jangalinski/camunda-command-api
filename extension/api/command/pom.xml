@@ -37,6 +37,18 @@
       <artifactId>jackson-databind</artifactId>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>camunda-command-generator-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.holunda.command.project</groupId>
+      <artifactId>camunda-command-generator-processor</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>

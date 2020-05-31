@@ -14,14 +14,8 @@
 
   <modules>
     <module>api</module>
+    <module>model</module>
     <module>processor</module>
   </modules>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
 </project>
